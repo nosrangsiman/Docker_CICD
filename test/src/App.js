@@ -5,27 +5,14 @@ import './App.css';
 
 function App() {
   const [userName, setUsername] = useState('')
-  const [textApi, setTextapi] = useState('')
 
   useEffect(()=>{
     getNames();
     
   },[])
 
-  useEffect(()=>{
-    getText();
-    
-  },[])
-
-  const getText = async() => {
-
-    const textFetch = await axios.get('/home');
-    console.log(textFetch);
-    setTextapi(textFetch.data);
-  }
-
   const getNames = async() => {
-    const response = await axios.get('/names');
+    const response = await axios.get('/');
     console.log(response);
     setUsername(response.data);
   }

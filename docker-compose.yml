@@ -1,6 +1,4 @@
 version: '3.8'
-networks:
-    react_network:
 
 services:
   react-app:
@@ -10,8 +8,7 @@ services:
     ports:
       - "80:80"
     container_name: react_prod
-    networks:
-      - react_network
+    
 
   server-api:
     build: 
@@ -19,6 +16,7 @@ services:
       dockerfile: Dockerfile
     container_name: server-api
     restart: always
-    networks:
-      - react_network
+    links:
+      - react-app
+
 

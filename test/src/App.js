@@ -19,13 +19,13 @@ function App() {
 
   const getText = async() => {
 
-    const textFetch = await axios.get('api/home');
+    const textFetch = await axios.get('/home');
     console.log(textFetch);
     setTextapi(textFetch.data);
   }
 
   const getNames = async() => {
-    const response = await axios.get('api/names');
+    const response = await axios.get('/names');
     console.log(response);
     setUsername(response.data);
   }

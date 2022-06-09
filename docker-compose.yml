@@ -17,7 +17,7 @@ services:
     build: 
       context: ./serverapi
       dockerfile: Dockerfile
-    container_name: NodeJS_1
+    container_name: server-api
     restart: always
     networks:
       - react_network

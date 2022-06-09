@@ -34,5 +34,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: react-app
-        run: sudo docker-compose up -d --build
+        run: sudo docker compose up -d --build
       

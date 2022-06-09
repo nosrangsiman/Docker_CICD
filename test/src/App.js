@@ -24,7 +24,6 @@ function App() {
         <p>
           by {userName}
         </p>
-        <h3>{textApi}</h3>
       </header>
       
     </div>

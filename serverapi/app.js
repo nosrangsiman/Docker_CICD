@@ -4,6 +4,12 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, '/test/build')));
 
+app.use((req, res, next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+})
+
 app.get('/names', (req,res)=>{
     res.send("Nos Rangsiman");
 })

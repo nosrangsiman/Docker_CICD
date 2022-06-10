@@ -14,7 +14,7 @@ services:
     container_name: nginx
     restart: always
     volumes:
-      - ./nginx/conf.d:./etc/nginx/conf.d
+      - ./nginx/conf.d:/etc/nginx/conf.d
     ports:
       - "80:80"
     networks:

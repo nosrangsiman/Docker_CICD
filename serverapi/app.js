@@ -10,16 +10,8 @@ app.use((req, res, next)=>{
     next();
 })
 
-app.get('/names', (req,res)=>{
-    res.send("Nos Rangsiman");
-})
-
-app.get('/home', (req,res)=>{
-    res.send("This is working!");
-})
-
 app.get('/', (req,res)=>{
-    res.send("this Api path directory is /home and /names");
+    res.send("Nos Rangsiman");
 })
 
 app.listen(8080, ()=>{

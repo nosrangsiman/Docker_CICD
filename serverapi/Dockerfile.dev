@@ -3,5 +3,5 @@ WORKDIR /app
 COPY . .
 ENV PATH /app/node_modules/.bin:$PATH
 RUN npm install
-CMD ["npm", "start"]
+CMD ["node", "app_dev.js"]
 EXPOSE 8000

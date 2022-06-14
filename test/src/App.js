@@ -12,7 +12,7 @@ function App() {
   },[])
 
   const getNames = async() => {
-    const response = await axios.get('/api');
+    const response = await axios.get('/');
     console.log(response);
     setUsername(response.data);
   }

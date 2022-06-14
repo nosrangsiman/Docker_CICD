@@ -21,23 +21,41 @@ services:
       # - frontend
       - nginx_network
 
-  react-app:
+  react-app1:
     build: 
       context: ./test
       dockerfile: Dockerfile.prod
     container_name: react_prod
+    depends_on:
+      - api_prod
     networks:
       # - frontend
       # - backend
       - nginx_network
     
-
-  server-api:
+  api_prod:
     build: 
       context: ./serverapi
       dockerfile: Dockerfile
-    container_name: server-api
+    container_name: api_prod
     restart: always
-    networks:
-      - nginx_network
       # - backend
+
+  react-app2:
+    build: 
+      context: ./test
+      dockerfile: Dockerfile.dev
+    container_name: react_dev
+    depends_on:
+      - api_dev
+    networks:
+      # - frontend
+      # - backend
+      - nginx_network
+   
+  api_dev:
+    build: 
+      context: ./serverapi
+      dockerfile: Dockerfile
+    container_name: api_dev
+    restart: always

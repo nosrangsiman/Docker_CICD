@@ -26,8 +26,6 @@ services:
       context: ./test
       dockerfile: Dockerfile.prod
     container_name: react_prod
-    depends_on:
-      - api_prod
     networks:
       # - frontend
       # - backend
@@ -49,8 +47,6 @@ services:
       context: ./test
       dockerfile: Dockerfile.dev
     container_name: react_dev
-    depends_on:
-      - api_dev
     networks:
       # - frontend
       # - backend

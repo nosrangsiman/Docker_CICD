@@ -36,7 +36,7 @@ services:
   api_prod:
     build: 
       context: ./serverapi
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     container_name: api_prod
     restart: always
       # - backend
@@ -56,6 +56,6 @@ services:
   api_dev:
     build: 
       context: ./serverapi
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: api_dev
     restart: always

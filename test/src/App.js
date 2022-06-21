@@ -22,7 +22,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>This is workshop react-docker-cicd</h1>
         <p>
-           {userName}
+          by {userName}
         </p>
       </header>
       

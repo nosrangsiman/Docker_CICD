@@ -2,10 +2,6 @@ version: '3.8'
 networks:
   nginx_network:
     driver: bridge
-  # frontend:
-  #   driver: bridge
-  # backend:
-  #   driver: bridge
 
 services:
 
@@ -21,23 +17,38 @@ services:
       # - frontend
       - nginx_network
 
-  react-app:
+  react-app1:
     build: 
       context: ./test
       dockerfile: Dockerfile.prod
     container_name: react_prod
     networks:
-      # - frontend
-      # - backend
       - nginx_network
     
 
-  server-api:
+  server-api_prod:
     build: 
       context: ./serverapi
-      dockerfile: Dockerfile
-    container_name: server-api
+      dockerfile: Dockerfile.prod
+    container_name: server-api_prod
     restart: always
     networks:
       - nginx_network
-      # - backend
+
+  react-app2:
+    build: 
+      context: ./test
+      dockerfile: Dockerfile.dev
+    container_name: react_dev
+    networks:
+      - nginx_network
+    
+
+  server-api_dev:
+    build: 
+      context: ./serverapi
+      dockerfile: Dockerfile.dev
+    container_name: server-api_dev
+    restart: always
+    networks:
+      - nginx_network  
